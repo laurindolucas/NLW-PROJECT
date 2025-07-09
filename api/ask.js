@@ -78,13 +78,11 @@ const contents = [{
     parts: [{ text: ask }]
   }];
 
-  const tools = [{ google_search: {} }];
-
   try {
     const response = await fetch(geminiURL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contents, tools })
+      body: JSON.stringify({ contents })
     });
 
     const data = await response.json();
